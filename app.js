@@ -67,7 +67,7 @@ const retryMessage = async (message, retryTopic, retryCount) => {
 
     console.log(`Message sent to retry topic (${retryCount}): ${message.value.toString()}`);
   } catch (e) {
-    console.error(`Erro ao reenviar mensagem para o tópico de retry: ${e.message}`);
+    console.error(`Error to send message to retry topic: ${e.message}`);
   }
 };
 
@@ -142,8 +142,8 @@ app.post('/produce', async (req, res) => {
     });
     res.json({ status: 'Message sent to Kafka' });
   } catch (error) {
-    console.error(`Erro ao publicar mensagem: ${error.message}`);
-    res.status(500).json({ error: 'Erro interno do servidor' });
+    console.error(`Error to publish message: ${error.message}`);
+    res.status(500).json({ error: 'Internal server error' });
   }
 });
 
@@ -151,5 +151,5 @@ app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });
 
-// Inicie os consumidores
+// Start consumers
 run().catch(console.error);
