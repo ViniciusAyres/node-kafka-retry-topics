@@ -19,6 +19,7 @@ Este é um projeto Node.js que inclui um consumidor Kafka e um endpoint para pro
 3. Execute o seguinte comando para iniciar os serviços Kafka e Zookeeper no Docker:
 
     ```bash
+    export HOST_IP=$(ifconfig | grep -E "([0-9]{1,3}\.){3}[0-9]{1,3}" | grep -v 127.0.0.1 | awk '{ print $2 }' | cut -f2 -d: | head -n1)
     docker-compose up -d
     ```
 
@@ -36,7 +37,7 @@ Este é um projeto Node.js que inclui um consumidor Kafka e um endpoint para pro
     npm install
     ```
 
-### Criando um Tópico Kafka
+### Criando um Tópico Kafka (opcional)
 
 1. Execute o seguinte comando para criar o tópico `test-topic`:
 
