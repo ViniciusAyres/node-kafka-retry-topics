@@ -1,6 +1,6 @@
 **Projeto Node.js com Kafka usando Docker - README**
 
-Este é um projeto Node.js que inclui um consumidor Kafka e um endpoint para produzir mensagens. O projeto foi configurado para se conectar a um servidor Kafka executado no Docker.
+Este projeto Node.js incorpora um consumidor Kafka e um endpoint para produção de mensagens. A configuração está ajustada para se integrar a um servidor Kafka em execução no Docker. Notavelmente, o projeto implementa um mecanismo de tópicos de reprocessamento para evitar gargalos no tópico principal. Uma área de aprimoramento sugerida seria a adição de uma estrutura de backoff incremental para os tópicos de retry, aprimorando a gestão de falhas e permitindo uma abordagem mais resiliente no reprocessamento de mensagens.
 
 ### Pré-requisitos
 
